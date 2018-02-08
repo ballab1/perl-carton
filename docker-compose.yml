@@ -1,22 +1,11 @@
-version: '3.1'
+version: '3.2'
 
 services:
-    perl:
+    carton:
         build:
-            context: ../perl
             args:
-                TZ: "America/New_York"
-        image: perl:20171231
-        container_name: perl
-        hostname: perl
-        restart: unless-stopped
-        environment:
-            TZ: "America/New_York"
-        volumes:
-            - ../perl/vols/log:/var/log 
-            - ../perl/vols/scripts:/scritps
-        logging:
-            driver: "json-file"
-            options:
-                max-size: "10m"
-                max-file: "3"
+                CODE_VERSION: perl-5.24.3:20180207
+            cache_from:
+                - perl-5.24.3:20180207
+            context: .
+        image: perl-carton:20180207

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#create directory for our cpan stuff
+mkdir -p /usr/src/app
+cd /usr/src/app
+
+# use 'carton' to install files defined in 'cpanfile'
+carton install
+
+# cleanup logfiles and build files unless there was an error
+if ( grep -rcH ' FAIL ' * | grep -v ':0' > /dev/null ) ; then
+    # remove stuff we do not require
+    rm -rf local/bin
+    rm -rf local/cache
+    rm -rf local/lib/perl5/x86_64-linux-gnu/.meta
+
+    if [ -d local/lib/perl5/auto/share/dist ]; then
+        find local/lib/perl5/auto/share/dist -name 'include' -type d -exec rm -rf '{}' \;  > /dev/null 2>&1
+        find local/lib/perl5/auto/share/dist -name 'pkgconfig' -type d -exec rm -rf '{}' \;  > /dev/null 2>&1
+        find local/lib/perl5/auto/share/dist -name '*.a' -type f -delete
+    fi
+
+    # clean up any installer crud
+    [ -d /root/.cpanm ] && rm -rf /root/.cpanm
+    [ -d /root/.cpan ] && rm -rf /root/.cpan
+fi
+
+#create folder to mount  (working folder)
+mkdir -p /usr/src/myapp
+export HOME=/usr/src/myapp

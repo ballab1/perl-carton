@@ -1,0 +1,7 @@
+
+declare -A CPANIMUS
+
+CPANIMUS['version']='1.7043'
+CPANIMUS['file']="app-cpanimus.${CPANIMUS['version']}.pm"
+CPANIMUS['url']="https://cpanmin.us"
+CPANIMUS['sha256']="d2221f1adb956591fa43cd61d0846b961be1fffa222210f097bfd472a11e0539"
