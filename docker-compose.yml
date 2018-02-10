@@ -4,17 +4,17 @@ services:
     postgres:
         build:
             args:
-                CODE_VERSION: base_container:20180207
+                CODE_VERSION: base_container:20180210
             context: .
             cache_from:
-                - base_container:20180207
+                - base_container:20180210
             context: .
         container_name: postgres
         environment:
             POSTGRES_PASSWORD: postgres
             TZ: "America/New_York"
         hostname: postgres
-        image: postgresql-10.1:20180207
+        image: postgresql-10.1:20180210
         logging:
             driver: "json-file"
             options:
