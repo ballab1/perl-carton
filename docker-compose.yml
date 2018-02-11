@@ -1,30 +1,15 @@
-version: '3.2'
+version: '3.5'
 
 services:
-    postgres:
+    carton:
         build:
             args:
-                CODE_VERSION: base_container:20180210
-            context: .
+                CODE_VERSION: perl-5.24.3:20180210
             cache_from:
+                - perl-5.24.3:20180210
                 - base_container:20180210
+                - alpine:3.6
             context: .
-        container_name: postgres
-        environment:
-            POSTGRES_PASSWORD: postgres
-            TZ: "America/New_York"
-        hostname: postgres
-        image: postgresql-10.1:20180210
-        logging:
-            driver: "json-file"
-            options:
-                max-size: "10m"
-                max-file: "3"
-        ports:
-            - 5432:5432
-        restart: unless-stopped
-        volumes:
-            - ./vols-ro/postgres-initdb:/docker-entrypoint-initdb.d
-            - ./vols-rw/data:/var/lib/postgresql/data
-            - ./vols-ro/etc:/etc/postgres
-            - ./vols-rw/log:/var/log/postgres 
+#        depends_on:
+#            - perl-5.24.3:20180210
+        image: perl-carton:20180210
