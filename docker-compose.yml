@@ -11,5 +11,5 @@ services:
                 - alpine:3.6
             context: .
 #        depends_on:
-#            - perl-5.24.3:20180210
+#            - perl
         image: perl-carton:20180210
