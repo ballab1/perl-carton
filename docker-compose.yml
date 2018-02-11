@@ -10,6 +10,27 @@ services:
                 - base_container:20180210
                 - alpine:3.6
             context: .
-#        depends_on:
-#            - perl
+        depends_on:
+            - perl
         image: perl-carton:20180210
+
+    base:
+        build:
+            args:
+                CODE_VERSION: alpine:3.6
+                TZ: "America/New_York"
+            cache_from:
+                - alpine:3.6
+            context: ../base_container
+        image: base_container:20180210
+
+    perl:
+        build:
+            args:
+                CODE_VERSION: base_container:20180210
+            cache_from:
+                - base_container:20180210
+            context: ../perl.5-24-3
+        depends_on:
+            - base
+        image: perl-5.24.3:20180210
