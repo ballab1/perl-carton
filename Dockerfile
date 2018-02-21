@@ -10,8 +10,8 @@ COPY build /tmp/
 
 # build content
 RUN set -o verbose \
-    && chmod u+rwx /tmp/container/build.sh \
-    && /tmp/container/build.sh 'Perl-CARTON'
+    && chmod u+rwx /tmp/build.sh \
+    && /tmp/build.sh 'Perl-CARTON'
 RUN rm -rf /tmp/*
 
 ONBUILD COPY cpanfile* /usr/src/app/
