@@ -1,2 +1,5 @@
 # carton Packages
-apk add --no-cache zlib-dev libxml2 libxml2-dev python zlib-dev
+
+if [ "${CBF['os_id']}" = 'alpine' ]; then
+    apk add --no-cache zlib-dev libxml2 libxml2-dev python zlib-dev
+fi
