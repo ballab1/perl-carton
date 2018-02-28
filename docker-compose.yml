@@ -12,27 +12,7 @@ services:
                 - base_container:20180217
                 - alpine:3.6
             context: .
+            dockerfile: Dockerfile
+        environment:
+            CONTAINER_NAME: perl-carton
         image: perl-carton:20180217
-
-    base:
-        build:
-            args:
-                CONTAINER_VERSION: 1.0.2
-                DEBUG_TRACE: 0
-                FROM_BASE: alpine:3.6
-                TZ: "America/New_York"
-            cache_from:
-                - alpine:3.6
-            context: ../base_container
-        image: base_container:20180217
-
-    perl:
-        build:
-            args:
-                CONTAINER_VERSION: 1.0.2
-                DEBUG_TRACE: 0
-                FROM_BASE: base_container:20180217
-            cache_from:
-                - base_container:20180217
-            context: ../perl.5-24-3
-        image: perl-5.24.3:20180217
