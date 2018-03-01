@@ -4,6 +4,7 @@ services:
     carton:
         build:
             args:
+                CONTAINER_NAME: perl-carton
                 CONTAINER_VERSION: 1.0.2
                 DEBUG_TRACE: 0
                 FROM_BASE: perl-5.24.3:20180217
@@ -13,6 +14,4 @@ services:
                 - alpine:3.6
             context: .
             dockerfile: Dockerfile
-        environment:
-            CONTAINER_NAME: perl-carton
         image: perl-carton:20180217
