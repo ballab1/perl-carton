@@ -7,11 +7,11 @@ services:
                 CONTAINER_NAME: perl-carton
                 CONTAINER_VERSION: 1.0.5
                 DEBUG_TRACE: 0
-                FROM_BASE: perl-5.24.3:20180311
+                FROM_BASE: perl-5.24.3:20180314
             cache_from:
-                - perl-5.24.3:20180311
-                - base_container:20180311
+                - perl-5.24.3:20180314
+                - base_container:20180314
                 - alpine:3.6
             context: .
             dockerfile: Dockerfile
-        image: perl-carton:20180311
+        image: perl-carton:20180314
