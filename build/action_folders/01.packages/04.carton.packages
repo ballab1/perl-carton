@@ -1,7 +1,7 @@
 # carton Packages
 
 if [ "${CBF['os_id']}" = 'alpine' ]; then
-    declare PKGS='zlib-dev libxml2 libxml2-dev python zlib-dev'
+    declare PKGS='libxml2 libxml2-dev python'
     package.checkIfInstalled "$PKGS"
     apk add --no-cache $PKGS
 fi
