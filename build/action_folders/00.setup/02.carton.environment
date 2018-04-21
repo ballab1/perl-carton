@@ -1,0 +1,10 @@
+#!/bin/bash
+
+declare -ar env_carton=(
+    'PERL5LIB="/usr/src/app/local/lib/perl5:$PERL5LIB"'
+    'APPDIR="${APPDIR:-/usr/src/myapp}"'
+    'WORKDIR="${APPDIR}"'
+    'HOME="${APPDIR}"'
+)
+
+lib.updateRuntimeEnvironment "${env_carton[*]}" 
