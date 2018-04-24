@@ -6,6 +6,7 @@ services:
             args:
                 CBF_VERSION: ${CBF_VERSION:-dev}
                 CONTAINER_NAME: perl-carton
+<<<<<<< HEAD
                 CONTAINER_VERSION: 1.0.8
                 FROM_BASE: perl-5.24.3:latest
             cache_from:
@@ -17,3 +18,15 @@ services:
         environment:
             DEBUG_TRACE: ${DEBUG_TRACE:-0}
         image: perl-carton:latest
+=======
+                CONTAINER_VERSION: 1.0.7
+                DEBUG_TRACE: 0
+                FROM_BASE: perl-5.24.3:20180325
+            cache_from:
+                - perl-5.24.3:20180325
+                - base_container:20180325
+                - alpine:3.6
+            context: .
+            dockerfile: Dockerfile
+        image: perl-carton:20180325
+>>>>>>> master
