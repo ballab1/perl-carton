@@ -1,7 +1,7 @@
 
 declare -A CPANIMUS
 
-CPANIMUS['version']='1.7043'
+CPANIMUS['version']='1.7044'
 CPANIMUS['file']="/tmp/app-cpanimus.${CPANIMUS['version']}.pm"
 CPANIMUS['url']="https://cpanmin.us"
-CPANIMUS['sha256']="d2221f1adb956591fa43cd61d0846b961be1fffa222210f097bfd472a11e0539"
+CPANIMUS['sha256']="22b92506243649a73cfb55c5990cedd24cdbb20b15b4530064d2496d94d1642b"

@@ -27,4 +27,3 @@ fi
 
 #create folder to mount  (working folder)
 mkdir -p /usr/src/myapp
-export HOME=/usr/src/myapp
