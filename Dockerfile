@@ -1,15 +1,15 @@
-ARG FROM_BASE=perl-5.24.3:20180329
+ARG FROM_BASE=perl-5.24.3:${CONTAINER_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
 ARG CONTAINER_NAME=perl-carton
-ARG CONTAINER_VERSION=1.0.9
+ARG CONTAINER_VERSION=3.0.0
 
 LABEL org_name=$CONTAINER_NAME \
       version=$CONTAINER_VERSION 
 
 # Specify CBF version to use with our configuration and customizations
-ARG CBF_VERSION=${CBF_VERSION:-v3.0}
+ARG CBF_VERSION="${CBF_VERSION}"
 # include our project files
 COPY build /tmp/
 # set to non zero for the framework to show verbose action scripts
