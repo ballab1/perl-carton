@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-}perl-5.26.2:${CONTAINER_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-}perl:${CONTAINER_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -12,6 +12,11 @@ COPY build Dockerfile /tmp/
 # set to non zero for the framework to show verbose action scripts
 #    (0:default, 1:trace & do not cleanup; 2:continue after errors)
 ENV DEBUG_TRACE=0
+
+
+# cpanimus version being bundled in this docker image
+ARG CPANIMUS_VERSION=${CPANIMUS_VERSION:-1.7044}
+LABEL cpanimus.version=$CPANIMUS_VERSION  
 
 
 # build content
