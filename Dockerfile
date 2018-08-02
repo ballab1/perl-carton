@@ -26,9 +26,14 @@ RUN set -o verbose \
 RUN [ $DEBUG_TRACE != 0 ] || rm -rf /tmp/* \n 
 
 
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+#CMD ["$CONTAINER_NAME"]
+CMD ["perl-carton"]
+
+
 # commands which are run when building containers based on this image
 ONBUILD COPY cpanfile* /usr/src/app/
 ONBUILD RUN /carton.build ; rm /carton.build
-ONBUILD ENV PERL5LIB=/usr/src/app/local/lib/perl5:$PERL5LIB
+ONBUILD ENV PERL5LIB=/usr/src/app/local/lib/perl5:/usr/src/myapp:$PERL5LIB
 ONBUILD ENV APPDIR=/usr/src/myapp
 ONBUILD WORKDIR ${APPDIR}
