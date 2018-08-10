@@ -4,7 +4,7 @@ FROM $FROM_BASE
 # name and version of this docker image
 ARG CONTAINER_NAME=perl-carton
 # Specify CBF version to use with our configuration and customizations
-ARG CBF_VERSION="${CBF_VERSION}"
+ARG CBF_VERSION
 
 # include our project files
 COPY build Dockerfile /tmp/
@@ -15,7 +15,7 @@ ENV DEBUG_TRACE=0
 
 
 # cpanimus version being bundled in this docker image
-ARG CPANIMUS_VERSION=${CPANIMUS_VERSION:-1.7044}
+ARG CPANIMUS_VERSION=1.7044
 LABEL cpanimus.version=$CPANIMUS_VERSION  
 
 
