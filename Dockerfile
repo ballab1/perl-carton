@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-}perl:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-}${OS:-}perl:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
