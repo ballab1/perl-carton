@@ -1,8 +1,0 @@
-
-declare -A CPANIMUS=(
-    ['version']=${CPANIMUS_VERSION:?}
-    ['file']="/tmp/app-cpanimus.${CPANIMUS['version']}.pm"
-    ['url']="https://cpanmin.us"
-    ['sha256_1.7044']="22b92506243649a73cfb55c5990cedd24cdbb20b15b4530064d2496d94d1642b"
-    ['sha256']="${CPANIMUS['sha256_'${CPANIMUS['version']}]}"
-)

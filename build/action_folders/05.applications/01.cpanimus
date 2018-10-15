@@ -1,3 +1,0 @@
-#!/bin/bash
-
-cat "${CPANIMUS['file']}" | perl - App::cpanminus
