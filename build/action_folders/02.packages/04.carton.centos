@@ -1,12 +1,3 @@
 # carton Packages
 
-declare -a PKGS=( libxml2
-                  libxml2-devel
-                  python
-                  libssh2
-                  libuuid-devel
-#                  rh-perl526-perl-App-cpanminus
-                  rh-perl526-perl-Env
-                  uuid
-                  uuid-devel
-                  )
+declare -a PKGS=( rh-perl526-perl-App-cpanminus )

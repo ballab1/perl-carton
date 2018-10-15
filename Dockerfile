@@ -15,8 +15,8 @@ ENV DEBUG_TRACE=0
 
 
 # cpanimus version being bundled in this docker image
-ARG CPANIMUS_VERSION=1.7044
-LABEL cpanimus.version=$CPANIMUS_VERSION  
+ARG CPANMINUS_VERSION=1.7044
+LABEL cpanminus.version=$CPANMINUS_VERSION  
 
 
 # build content
