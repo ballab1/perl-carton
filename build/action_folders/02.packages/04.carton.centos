@@ -1,0 +1,4 @@
+# carton Packages
+
+declare -a PKGS=( libperl.so.rh-perl526-5.26
+                  rh-perl526-perl-App-cpanminus )

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+declare -ar env_carton=(
+    "CPANMINUS_VERSION=${CPANMINUS_VERSION:?}"
+    'PERL5LIB="/usr/src/app/local/lib/perl5:${PERL5LIB:-}"'
+    'APPDIR="${APPDIR:-/usr/src/myapp}"'
+    'WORKDIR="${APPDIR}"'
+    'HOME="${APPDIR}"'
+)
+
+crf.removeFromRuntimeEnvironment 'WORKDIR'
+crf.updateRuntimeEnvironment "${env_carton[@]}" 

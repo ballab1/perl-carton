@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mv carton.build /
+chmod a+rx /carton.build

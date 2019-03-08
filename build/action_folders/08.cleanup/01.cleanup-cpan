@@ -1,0 +1,6 @@
+#!/bin/bash
+
+declare -a dirs=( /root/.cpanm /root/.cpan /usr/src/myapp/.cpanm /usr/src/myapp/.cpan )
+for dir in "${dirs[@]}" ; do
+    [ ! -d "$dir" ] || rm -rf "$dir"
+done

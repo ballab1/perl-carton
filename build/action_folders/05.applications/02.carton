@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function action() {
+    term.log "cpanm Carton\n"
+    PERL_MM_USE_DEFAULT=1 cpanm Carton ||:
+    #PERL_MM_USE_DEFAULT=1 cpanm Carton-v1.0.34.tar.gz ||:
+
+    [ $(which carton) ] || trap.die 'carton not found!'
+}
+export -f action
+
+#scl enable rh-perl526 action
+action
