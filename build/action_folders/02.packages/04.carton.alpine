@@ -1,0 +1,5 @@
+# carton Packages
+
+declare -a PKGS=( libxml2
+                  libxml2-dev
+                  python )
