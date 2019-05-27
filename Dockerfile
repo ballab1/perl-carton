@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/perl:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/perl/${PERL_VERSION:-5.26.2}:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -22,8 +22,8 @@ LABEL version.cpanminus=$CPANMINUS_VERSION
 # build content
 RUN set -o verbose \
     && chmod u+rwx /tmp/build.sh \
-    && /tmp/build.sh "$CONTAINER_NAME" "$DEBUG_TRACE"
-RUN [ $DEBUG_TRACE != 0 ] || rm -rf /tmp/*
+    && /tmp/build.sh "$CONTAINER_NAME" "$DEBUG_TRACE" \
+    && ([ "$DEBUG_TRACE" != 0 ] || rm -rf /tmp/*)
 
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
