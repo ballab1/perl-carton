@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/perl/${PERL_VERSION:-5.26.2}:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2.home:5000/}${CONTAINER_OS:-alpine}/perl/${PERL_VERSION:-5.26.2}:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
