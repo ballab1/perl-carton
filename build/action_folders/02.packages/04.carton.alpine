@@ -1,4 +1,5 @@
 # carton Packages
 
 declare -a PKGS=( perl-app-cpanminus
-                  python )
+                  py3-pip
+                  python3  )
