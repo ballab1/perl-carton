@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-s2.ubuntu.home:5000/}${CONTAINER_OS:-alpine}/perl/${PERL_VERSION:-5.26.2}:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-s2.ubuntu.home:5000/}${CONTAINER_OS:-alpine}/perl/${PERL_VERSION:-5.32.0-r0}:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -15,7 +15,7 @@ ENV DEBUG_TRACE=0
 
 
 # cpanminus version being bundled in this docker image
-ARG CPANMINUS_VERSION=1.7044
+ARG CPANMINUS_VERSION=1.7044-r3
 LABEL version.cpanminus=$CPANMINUS_VERSION  
 
 
