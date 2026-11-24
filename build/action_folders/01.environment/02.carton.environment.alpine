@@ -8,5 +8,5 @@ declare -ar env_carton=(
     'HOME="${APPDIR}"'
 )
 
-crf.removeFromRuntimeEnvironment 'WORKDIR'
-crf.updateRuntimeEnvironment "${env_carton[@]}" 
+crf::removeFromRuntimeEnvironment 'WORKDIR'
+crf::updateRuntimeEnvironment "${env_carton[@]}"
